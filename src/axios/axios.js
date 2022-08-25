@@ -1,12 +1,15 @@
 const axios = require('axios')
 
-let getProduct = async (product_id) => {
+let getProduct = async (product_code) => {
     try {
-       
-        let url = `https://api.storerestapi.com/products/${product_id}`
+       //url for axios call
+        let url = `https://api.storerestapi.com/products/${product_code}`
+
+        //accepting only json format
         let headers = {
             "Accept" : "application/json"
         }
+        //using get method
         let result = await axios.get(url, { headers })
         
         //success
